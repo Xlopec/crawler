@@ -1,17 +1,9 @@
 package crawler.core.select;
 
 import com.google.common.base.Preconditions;
-import lombok.SneakyThrows;
-import lombok.Value;
-import lombok.extern.java.Log;
-import lombok.val;
-import org.elasticsearch.common.collect.Tuple;
-import crawler.core.main.model.Page;
-import crawler.core.main.model.PageID;
-import crawler.settings.UrlSelectSetting;
-import crawler.util.PageUtils;
 
-import javax.validation.constraints.NotNull;
+import org.elasticsearch.common.collect.Tuple;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
@@ -19,6 +11,17 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.validation.constraints.NotNull;
+
+import crawler.core.main.model.Page;
+import crawler.core.main.model.PageID;
+import crawler.settings.UrlSelectSetting;
+import crawler.util.PageUtils;
+import lombok.SneakyThrows;
+import lombok.Value;
+import lombok.extern.java.Log;
+import lombok.val;
 
 /**
  * Created by Максим on 12/18/2016.
@@ -50,8 +53,6 @@ public class UrlExtractorImp implements UrlExtractor {
                             val baseUrl = tuple.v2().getBaseUrl();
 
                             baseUrl.ifPresent(url -> elem.setBaseUri(url.toExternalForm()));
-
-                            System.out.println(elem.toString());
 
                             return elem.absUrl(tuple.v2().getAttrName());
                         })

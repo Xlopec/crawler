@@ -21,14 +21,15 @@ import crawler.settings.SchedulerSetting;
 import crawler.settings.Settings;
 import lombok.NonNull;
 
-public final class MFactory extends AnnotationCrawlerFactory {
+public final class SimpleFactory extends AnnotationCrawlerFactory {
+
     private final UrlsRepository urlsRepository;
 
-    public MFactory(@NonNull JobId jobId,
-                                       @NonNull SchedulerSetting schedulerSetting,
-                                       @NonNull Set<URL> startUrls,
-                                       @NonNull Set<Object> handlers,
-                                       @NonNull UrlsRepository urlsRepository) {
+    SimpleFactory(@NonNull JobId jobId,
+                  @NonNull SchedulerSetting schedulerSetting,
+                  @NonNull Set<URL> startUrls,
+                  @NonNull Set<Object> handlers,
+                  @NonNull UrlsRepository urlsRepository) {
         super(jobId, schedulerSetting, startUrls, handlers);
         this.urlsRepository = urlsRepository;
     }

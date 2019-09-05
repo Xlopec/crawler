@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.logging.Level;
-import java.util.regex.Pattern;
 
 import javax.validation.constraints.NotNull;
 
@@ -32,8 +31,6 @@ import lombok.val;
         }
 )
 public final class UrlCollector {
-
-    private static final Pattern p = Pattern.compile("\\d+");
 
     public void onHandleUri(@NotNull @Binding(selectors = {"#program_name > a"}) URL url, Page page) throws Exception {
         log.log(Level.INFO, String.format("On handle url %s of page %s", url.toExternalForm(), page.getUrl()));

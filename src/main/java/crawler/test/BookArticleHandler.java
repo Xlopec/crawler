@@ -29,14 +29,4 @@ import lombok.extern.java.Log;
                 @ContentAnalyzer(weight = 30, selector = "#program_info_title")
         }
 )
-public final class BookArticleHandler {
-
-   /* @Handles(selectors = {
-            "#info > noindex:nth-child(19) > a > img",
-            "#info > a > img"
-    })
-    public void handleLinks(@NotNull @Binding() URL url, Page page) {
-        "https://www.rulit.me/download-books-560582.html?t=doc"
-    }*/
-
-}
+final class BookArticleHandler { }
